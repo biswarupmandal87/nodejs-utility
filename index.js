@@ -2,26 +2,23 @@
 const ShortUniqueId = require('short-unique-id');
 const uid = new ShortUniqueId({ length: 16 });
 const sizeOf = require("image-size");
-const getPagination = (object) => {
-  const {
-    totalDocs,
-    prevPage,
-    page,
-    nextPage,
-    totalPages,
-    hasPrevPage,
-    hasNextPage,
-  } = object;
+const getPagination = (totalRecords, currentPage,pageSize = 10) => {
+  const totalPages = Math.ceil(totalRecords / pageSize); // Calculate total pages
+  const page = currentPage || 1; // Fallback to page 1 if not defined
+  const prevPage = page > 1 ? page - 1 : null;
+  const nextPage = page < totalPages ? page + 1 : null;
+  const hasPrevPage = prevPage !== null;
+  const hasNextPage = nextPage !== null;
   const itemsArray = generatePaginationNumbers(totalPages, page);
   return {
-    total: totalDocs,
-    previous_page: prevPage || 0,
-    current_page: page || 0,
-    next_page: nextPage || 0,
-    items: itemsArray,
-    total_pages: totalPages,
-    has_prev_page: hasPrevPage,
-    has_next_page: hasNextPage,
+    total: totalRecords,
+    previousPage: prevPage || 0,
+    currentPage: page || 0,
+    nextPage: nextPage || 0,
+    pages: itemsArray,
+    totalPages: totalPages,
+    hasPreviousPage: hasPrevPage,
+    hasNextPage: hasNextPage,
   };
 };
 const generatePaginationNumbers = (totalPages, currentPage) => {
