@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biswarupmandal87/nodejs-utils.git"
+  },
+  "keywords": [
+    "nodejs",
+    "utils"
+  ],
+  "author": "Biswarup Mandal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biswarupmandal87/nodejs-utils/issues"
+  },
+  "homepage": "https://github.com/biswarupmandal87/nodejs-utils#readme",
+  "description": "",
+  "dependencies": {
+    "image-size": "^1.1.1",
+    "short-unique-id": "^5.2.0"
+  }
+}
