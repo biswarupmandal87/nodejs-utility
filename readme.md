@@ -80,3 +80,7 @@ const fileObject = getFileObject(file,path);
 console.log(fileObject);
 // {_id: 1fRCklpW63B1Y7WUB, name: 'file.txt',file_type: "FILE", type: 'text/plain', size: 1000, url: 'http://localhost:3000/files/file.txt'}
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
